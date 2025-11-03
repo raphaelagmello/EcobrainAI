@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eco Brain.AI — Plataforma (Protótipo Avançado)</title>
+  <meta name="description" content="Protótipo avançado: cálculo de CO₂e, painéis interativos, checklist com progresso e relatório exportável." />
+  <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body>
+<header class="site-header" role="banner">
+  <div class="container nav-wrap">
+    <div class="brand">
+      <img src="assets/img/logo.png" alt="" class="logo" width="28" height="28" />
+      <strong>Eco Brain.AI</strong><span class="muted">Protótipo</span>
+    </div>
+    <nav class="nav" aria-label="Ações">
+      <a class="btn" href="../index.html">← Site</a>
+      <button id="themeToggle" class="btn ghost" aria-pressed="false" title="Tema">🌙</button>
+      <button id="newProject" class="btn">Novo</button>
+      <button id="saveProject" class="btn primary">Salvar</button>
+      <select id="projectsList" class="select" title="Projetos salvos"></select>
+      <button id="deleteProject" class="btn danger">Excluir</button>
+      
+    </nav>
+  </div>
+</header>
+
+
+<main class="container app" id="conteudo">
+  <aside class="sidebar" aria-label="Navegação de páginas">
+    <button class="tab-btn active" data-tab="dashboard">📊 Dashboard</button>
+    <button class="tab-btn" data-tab="dados">🧾 Dados</button>
+    <button class="tab-btn" data-tab="tarefas">✅ Tarefas</button>
+    <button class="tab-btn" data-tab="relatorio">📑 Relatório</button>
+    
+  </aside>
+
+  <section class="content">
+    <section id="tab-dashboard" class="tab active" aria-labelledby="h-dashboard">
+      <h1 id="h-dashboard">Dashboard</h1>
+      <div class="grid three">
+        <div class="card kpi"><span class="label">CO₂e total (mês)</span><strong id="kpiTotal">0 t</strong></div>
+        <div class="card kpi"><span class="label">Intensidade (kg/unid.)</span><strong id="kpiIntensity">0</strong></div>
+        <div class="card kpi"><span class="label">Tarefas concluídas</span><strong id="kpiTasks">0%</strong></div>
+      </div>
+      <div class="grid two">
+        <div class="card">
+          <h2>Fontes de Emissão</h2>
+          <div class="bars">
+            <div class="bar"><span>Eletricidade</span><div class="bar-fill" id="barEle"></div></div>
+            <div class="bar"><span>Gás Natural</span><div class="bar-fill" id="barGas"></div></div>
+            <div class="bar"><span>Diesel</span><div class="bar-fill" id="barDiesel"></div></div>
+          </div>
+          <p class="muted">Mostra a participação relativa de cada fonte no total de emissões.</p>
+        </div>
+        <div class="card">
+          <h2>Progresso do Plano</h2>
+          <div class="progress"><div id="progressOverall" class="progress-fill" style="width:0%"></div></div>
+          <ul class="progress-list" id="progressList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-dados" class="tab" aria-labelledby="h-dados">
+      <h1 id="h-dados">Dados de Entrada</h1>
+      <form id="calcForm" class="card">
+        <div class="grid two">
+          <label>Nome do projeto
+            <input type="text" id="projectName" placeholder="Ex.: EcoBrain – Fábrica Alpha 2025" required />
+          </label>
+          <label>Produção (unidades/mês)
+            <input type="number" id="production" min="0" step="1" value="10000" />
+          </label>
+        </div>
+        <div class="grid three">
+          <label>Eletricidade (kWh)<input type="number" id="electricity" min="0" step="0.01" value="50000" /></label>
+          <label>Gás natural (m³)<input type="number" id="gas" min="0" step="0.01" value="10000" /></label>
+          <label>Diesel (L)<input type="number" id="diesel" min="0" step="0.01" value="2000" /></label>
+        </div>
+        <details class="advanced">
+          <summary>Fatores de emissão (editar)</summary>
+          <div class="grid three">
+            <label>Eletricidade — kgCO₂e/kWh<input type="number" id="fe_electricity" step="0.0001" value="0.085" /></label>
+            <label>Gás natural — kgCO₂e/m³<input type="number" id="fe_gas" step="0.0001" value="1.9" /></label>
+            <label>Diesel — kgCO₂e/L<input type="number" id="fe_diesel" step="0.0001" value="2.68" /></label>
+          </div>
+          <p class="muted">Valores ilustrativos. Substitua pelos fatores oficiais.</p>
+        </details>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Calcular</button>
+          <button type="button" id="recomendar" class="btn">Recomendar Tarefas</button>
+        </div>
+      </form>
+
+      <section class="grid three">
+        <div class="card metric"><span class="label">Escopo 1 (combustíveis)</span><strong id="scope1">0 t</strong></div>
+        <div class="card metric"><span class="label">Escopo 2 (eletricidade)</span><strong id="scope2">0 t</strong></div>
+        <div class="card metric"><span class="label">CO₂e total (kg)</span><strong id="totalKg">0</strong></div>
+      </section>
+    </section>
+
+    <section id="tab-tarefas" class="tab" aria-labelledby="h-tarefas">
+      <h1 id="h-tarefas">Tarefas de Redução</h1>
+      <div class="card filter">
+        <input type="text" id="taskSearch" placeholder="Buscar tarefa..." />
+        <select id="taskArea">
+          <option value="">Todas as áreas</option>
+          <option value="energia">Energia</option>
+          <option value="processo">Processo</option>
+          <option value="manutencao">Manutenção</option>
+          <option value="gestao">Gestão</option>
+        </select>
+        <select id="taskLevel">
+          <option value="">Todos os níveis</option>
+          <option value="baixo">Baixo custo</option>
+          <option value="medio">Médio</option>
+          <option value="alto">Alto</option>
+        </select>
+        <button id="clearDone" class="btn ghost">Limpar concluídas</button>
+      </div>
+      <div class="accordion" id="taskAccordion"></div>
+    </section>
+
+    <section id="tab-relatorio" class="tab" aria-labelledby="h-relatorio">
+      <h1 id="h-relatorio">Relatório</h1>
+      <div class="card">
+        <table class="report">
+          <thead><tr><th>Item</th><th>Quantidade</th><th>Fator</th><th>CO₂e (kg)</th></tr></thead>
+          <tbody id="reportBody"></tbody>
+          <tfoot><tr><th colspan="3">Total</th><th id="reportTotal">0</th></tr></tfoot>
+        </table>
+      </div>
+      <div class="card"><h2>Resumo do Plano</h2><ul id="reportTasks"></ul></div>
+    </section>
+
+
+<script src="assets/js/ui.js" defer></script>
+<script src="assets/js/storage.js" defer></script>
+<script src="assets/js/export.js" defer></script>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

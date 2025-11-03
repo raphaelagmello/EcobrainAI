@@ -1,0 +1,88 @@
+.container{
+    max-width:1100px; /* Largura máxima que o conteúdo terá */
+    margin:0 auto;
+    padding:0 20px; /* Adiciona 20px de espaço interno nas laterais para que o conteúdo não cole nas bordas da tela em mobile/tablets */
+}
+
+
+.skip-link{ 
+    /* Esconde o link "Pular para o conteúdo principal" da visão normal do usuário */
+    position:absolute; 
+    left:-9999px; /* Manda o link para fora da tela */
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+.skip-link:focus{
+    /* Quando o usuário de teclado (sem mouse) foca neste link (apertando TAB), ele aparece */
+    position:static; /* Traz o link de volta para a tela */
+    width:auto;
+    height:auto;
+    padding:8px;
+    background:var(--green); /* Estilo de destaque para ser visível e clicável */
+    color:#fff;
+    border-radius:8px;
+}
+
+/* Sections */
+
+.hero{
+    /* Seção de destaque no topo da página */
+    background:linear-gradient(180deg,var(--bg) 0%, var(--bg-alt) 100%); /* Fundo com gradiente suave do fundo principal para o alternativo */
+    padding:72px 0; /* Grande espaço vertical (72px em cima e embaixo) para dar ênfase */
+}
+
+.features{
+    padding:56px 0; /* Espaçamento vertical padrão para a seção de recursos */
+}
+
+.features.alt{
+    background:var(--bg-alt); /* Variação da seção features com fundo alternativo para criar contraste */
+}
+
+.page-hero{
+    /* Seção de hero para páginas internas (Sobre, Serviços) */
+    padding:48px 0;
+    border-bottom:1px solid var(--border); /* Linha fina de separação na parte inferior */
+}
+
+.impact{
+    padding:56px 0;
+    background:var(--bg);
+}
+
+/* Grid & Cards */
+
+.grid{
+    display:grid; /* Ativa o sistema CSS Grid no contêiner */
+    gap:22px;
+}
+
+.grid.two{
+    grid-template-columns:repeat(2,1fr); /* Divide o grid em 2 colunas de larguras iguais (1 fração de espaço cada) */
+}
+
+.grid.three{
+    grid-template-columns:repeat(3,1fr); /* Divide o grid em 3 colunas de larguras iguais */
+}
+
+.grid.four{
+    grid-template-columns:repeat(4,1fr); /* Divide o grid em 4 colunas de larguras iguais */
+}
+
+
+/* Footer */
+
+.site-footer{
+    padding:32px 0;
+    background:var(--bg-alt); /* Usa a cor de fundo alternativo para separá-lo visualmente do corpo da página */
+    border-top:1px solid var(--border) /* Linha fina de separação no topo do rodapé */
+}
+
+.footer-grid{
+    display:grid;
+    gap:18px;
+    grid-template-columns:repeat(3,1fr); /* Organiza o conteúdo do rodapé em 3 colunas */
+}

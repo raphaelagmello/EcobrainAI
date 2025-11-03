@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eco Brain.AI — Contato</title>
+  <meta name="description"
+    content="Formulário de contato funcional (validação JS) e mapa com localização. Links para redes sociais." />
+  <link rel="stylesheet" href="assets/css/contato.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+</head>
+
+<body>
+
+  <header class="site-header" role="banner">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Página inicial">
+        <img src="assets/img/logo.png" alt="" class="logo" width="28" height="28" />
+        <span class="brand-name">Eco Brain.AI</span>
+      </a>
+      <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="primaryNav">☰</button>
+      <nav id="primaryNav" class="nav" aria-label="Navegação primária">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="servicos.html">Serviços/Produtos</a>
+        <a href="contato.html">Contato</a>
+        <a href="app/app.html" class="badge">Entrar no App</a>
+        <button id="themeToggle" class="btn ghost" aria-pressed="false" aria-label="Alternar tema">🌙</button>
+        <div class="font-controls" aria-label="Controles de fonte">
+          <button id="fontDec" class="btn ghost" aria-label="Diminuir fonte">A-</button>
+          <button id="fontInc" class="btn ghost" aria-label="Aumentar fonte">A+</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Contato</h1>
+        <p class="lead">Fale com a equipe. Para fins acadêmicos, os envios são simulados e salvos localmente
+          (localStorage).</p>
+      </div>
+    </section>
+
+    <section class="container grid two contact-grid">
+      <div>
+        <form id="contatoForm" aria-labelledby="form-title" novalidate>
+          <h2 id="form-title">Envie uma mensagem</h2>
+          <label>Nome
+            <input type="text" name="nome" required aria-required="true" placeholder="Seu nome completo" />
+          </label>
+          <label>E-mail
+            <input type="email" name="email" required aria-required="true" placeholder="seu@email.com" />
+          </label>
+          <label>Mensagem
+            <textarea name="mensagem" rows="5" required aria-required="true"
+              placeholder="Como podemos ajudar?"></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Enviar</button>
+            <span id="formFeedback" role="status" aria-live="polite" class="muted"></span>
+          </div>
+          <p class="muted footnote">*Dados não são enviados a servidor. Simulação acadêmica com armazenamento local.</p>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">Instagram</a> ·
+            <a href="#" aria-label="LinkedIn">LinkedIn</a> ·
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </form>
+      </div>
+      <div>
+        <div id="map" class="map" role="region" aria-label="Mapa com localização aproximada"></div>
+        <p class="muted">Mapa com localização demonstrativa Fatec de Mogi Mirim. Use gestos ou teclado para navegar.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <strong>Eco Brain.AI</strong>
+        <p class="muted">Startup Explorer — Projeto acadêmico</p>
+        <small class="muted">© <span id="year"></span> Eco Brain.AI. Todos os direitos reservados.</small>
+      </div>
+      <div>
+        <p><strong>LGPD & Ética</strong><br>
+          Este site é demonstrativo e não armazena dados sensíveis. No ambiente de produção, inserir Política de
+          Privacidade, Termos de Uso e Aviso de Cookies.</p>
+      </div>
+      <div>
+        <p><strong>Acessibilidade</strong><br>
+          Ajuste o tamanho da fonte (A-/A+), ative o modo escuro e navegue por teclado (Tab/Shift+Tab).</p>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/tema.js" defer></script>
+  <script src="assets/js/validar.js" defer></script>
+  <!--Link abaixo é do mapa-->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+ 
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+   
+    const fatecMogiMirim = [-22.4223031891046, -46.949371420697496];
+
+    const map = L.map('map', { scrollWheelZoom: false }).setView(fatecMogiMirim, 17);
+
+    
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+ 
+    L.marker(fatecMogiMirim).addTo(map)
+      .bindPopup('<b>Fatec "Arthur de Azevedo" de Mogi Mirim</b>')
+      .openPopup();
+  });
+ </script>
+</body>
+</html>

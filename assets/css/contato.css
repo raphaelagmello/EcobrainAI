@@ -1,0 +1,44 @@
+/* Contact */
+.contact-grid{
+    align-items:start; /* Garante que o formulário e o mapa comecem alinhados no topo do grid */
+}
+
+form{
+    display:flex; /* Usa Flexbox para organizar os campos */
+    flex-direction:column; /* Coloca os campos em uma coluna (empilhados) */
+    gap:12px; /* Adiciona 12px de espaço ENTRE os elementos */
+}
+
+label{
+    display:flex; /* Usa Flexbox para alinhar o texto da label e o campo de input */
+    flex-direction:column; /* Coloca o texto da label em cima do campo (empilhados) */
+    gap:6px; /* Adiciona 6px de espaço ENTRE o texto da label e o campo de input */
+}
+
+input, textarea{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid var(--border); /* Borda fina usando a variável de cor base */
+    background:var(--card); /* Fundo branco ou escuro (variável) */
+    color:var(--text) /* Cor do texto (variável) */
+}
+
+input:focus, textarea:focus{
+    outline:3px solid #bbf7d0; /* Estilo visual que aparece quando o campo está selecionado/ativo */
+    border-color:#86efac; /* Altera a cor da borda ao focar para dar feedback ao usuário */
+}
+
+.form-actions{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.map{
+    width:100%;
+    height:300px;
+    border-radius:var(--radius); 
+    border:1px solid var(--border);
+    overflow:hidden; /* Garante que o mapa siga o border-radius, cortando qualquer parte que vaze */
+}

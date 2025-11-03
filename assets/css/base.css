@@ -1,0 +1,47 @@
+/* Paleta e layout */
+/* Definições de Variáveis de Cores e Estilos Padrão (Tema Claro) */
+:root{
+  --green:#27AE60; /* Cor primária (verde esmeralda) */
+  --green-600:#1f8e4f; /* Tonalidade mais escura para hover/ativação */
+   --graphite:#2C3E50; /* Cor escura principal (títulos) */
+   --graphite-2:#34495E; /* Tonalidade auxiliar do grafite */
+
+/* Cores de Fundo e Texto (Tema Claro) */
+  --bg:#ffffff; /* Cor de fundo principal (branco) */
+  --bg-alt:#f6f9fb; /* Cor de fundo alternativo (cinza claro para seções) */
+  --text:#0f172a; /* Cor principal do texto (quase preto) */
+  --muted:#6b7b8c; /* Cor para textos secundários/inativos */
+   --border:#e5e7eb; /* Cor da borda */
+  --card:#ffffff; /* Cor de fundo de cartões e elementos (branco) */
+  --shadow:0 10px 30px rgba(28,28,28,.06); /* Sombra suave para o modo claro */
+
+  /* Valores Constantes */
+  --radius:14px; /* Raio de borda padrão (arredondamento) */
+}
+/* Regras Específicas para o MODO ESCURO (Dark Mode) */
+:root.dark{
+  --bg:#0b1220; /* Fundo principal escuro */
+  --bg-alt:#0f172a; /* Fundo alternativo escuro */
+  --text:#e2e8f0; /* Texto claro */
+  --muted:#94a3b8; /* Texto secundário mais claro */
+  --border:#1f2937; /* Borda escura */
+  --card:#0f172a; /* Fundo de cartões escuro */
+  --shadow:none; /* Remove a sombra (opcional no dark mode) */
+}
+/* Reset Global */
+*{box-sizing:border-box} /* Regra fundamental: garante que padding e border não aumentem o tamanho total do elemento */
+html,body{margin:0;padding:0} /* Remove margens e paddings padrão do navegador (reset) */
+
+body{
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Helvetica,Arial,sans-serif; /* Define a fonte. Usa fontes do sistema para carregamento rápido. */
+  background:var(--bg); color:var(--text); line-height:1.6; /* Aplica cores de fundo e texto definidas nas variáveis e espaçamento de linha */
+  transition: background .3s ease, color .3s ease; /* Transição suave de 0.3s ao mudar de tema (dark/light) */
+  font-size: 16px; /* Tamanho de fonte padrão */
+}
+
+/* Estilos de Links */
+a{color:var(--green); text-decoration:none} /* Links usam a cor verde e não têm sublinhado por padrão */
+a:hover{text-decoration:underline} /* Adiciona sublinhado ao passar o mouse */
+
+/* Estilos de Imagens */
+img{max-width:100%; display:block} /* Imagens nunca ultrapassam a largura do seu contêiner e são exibidas como bloco */
