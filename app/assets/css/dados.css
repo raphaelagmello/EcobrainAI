@@ -1,0 +1,99 @@
+.kpi {
+    /* Indicadores Chave de Performance (Key Performance Indicators) */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+}
+
+.kpi .label {
+    color: var(--muted);
+    /* Cor secundária para o nome da métrica */
+    font-size: .9rem;
+}
+
+.kpi strong {
+    font-size: 1.6rem;
+    /* Estilo para o valor principal do KPI */
+}
+
+.metric {
+    /* Usado para agrupamento de dados menores */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+}
+
+/* Bars & progress ( gráficos de progresso) */
+
+.bars {
+    /* Grid para alinhar o rótulo da barra e a barra em si */
+    display: grid;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.bar {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    /* 120px para o rótulo e o restante (1fr) para a barra */
+    gap: 10px;
+    align-items: center;
+}
+
+.bar-fill {
+    /* Estilo da barra de preenchimento (animada por JS) */
+    height: 14px;
+    background: linear-gradient(90deg, var(--green), #2ECC71);
+    border-radius: 999px;
+    width: 0%;
+}
+
+.progress {
+    /* Contêiner da barra de progresso */
+    height: 16px;
+    background: var(--bg-alt);
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    /* Essencial para que o preenchimento não vaze */
+}
+
+.progress-fill {
+    /* Preenchimento interno da barra */
+    height: 100%;
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.progress-list {
+    margin: 8px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.progress-list li {
+    /* Estilo de lista de progresso (ex: itens concluídos) */
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed var(--border);
+    padding: 6px 0;
+}
+
+/* Report ( tabelas de relatórios ) */
+
+.report {
+    /* Garante que a tabela use toda a largura e colapse as bordas */
+    width: 100%;
+    border-collapse: collapse;
+    /* Faz as bordas das células se unirem */
+}
+
+
+.report th,
+.report td {
+    border: 1px solid var(--border);
+    /* Borda em todas as células */
+    padding: 8px;
+    text-align: left;
+}

@@ -1,0 +1,131 @@
+/* Header (Navegação Global) */
+.site-header {
+    position: sticky;
+    /* Faz o header fixar no topo ao rolar */
+    top: 0;
+    z-index: 40;
+    /* Garante que fique acima da maioria do conteúdo */
+    background: var(--bg);
+    /* Usa o fundo do tema (claro/escuro) */
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-wrap {
+    /* Flexbox para layout horizontal do topo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.brand {
+    display: flex;
+    /* Layout do logo e nome da marca */
+    gap: 10px;
+    align-items: center;
+}
+
+.logo {
+    /* Estilo do logo do app (menor que no site institucional) */
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, var(--green), #2ECC71);
+}
+
+.nav {
+    display: flex;
+    /* Layout dos links de navegação */
+    gap: 10px;
+    align-items: center;
+}
+
+.select {
+    /* Estilo para elementos <select> */
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fff;
+}
+
+/* Botões (Com um estilo um pouco diferente do site) */
+.btn {
+    /* Estilo base de todos os botões */
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: #fff;
+    font-weight: 700;
+    box-shadow: var(--shadow);
+}
+
+.btn.primary {
+    /* Botão de ação principal (verde) */
+    background: var(--green);
+    color: #fff;
+    border-color: var(--green);
+}
+
+.btn.ghost {
+    background: transparent;
+    color: white
+}
+
+.btn.danger {
+    /* Botão de alerta/perigo (ex: Excluir) */
+    background: #ffe5e5;
+    border-color: #fca5a5;
+    color: #b91c1c;
+}
+
+/* Cards & grid */
+
+.card {
+    /* Card mais compacto para o app */
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    background: var(--card);
+    box-shadow: var(--shadow);
+}
+
+.grid {
+    display: grid;
+    /* Ativa o CSS Grid */
+    gap: 16px;
+}
+
+.grid.two {
+    grid-template-columns: repeat(2, 1fr);
+    /* Grid de 2 colunas iguais */
+}
+
+.grid.three {
+    grid-template-columns: repeat(3, 1fr);
+    /* Grid de 3 colunas iguais */
+}
+
+
+/* Forms ( formulários internos do app ) */
+
+label {
+    /* Layout para o rótulo acima do campo de entrada */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+input {
+    /* Estilo dos campos de texto */
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fff;
+}
+
+.form-actions {
+    /* Layout para botões em formulários (ex: Salvar/Cancelar) */
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}

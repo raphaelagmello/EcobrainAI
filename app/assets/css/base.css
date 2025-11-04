@@ -1,0 +1,92 @@
+/* Paleta e layout ( configurações base do app )*/
+/* Variáveis para Cores (Tema Claro) */
+:root {
+    --green: #27AE60;
+    /* Cor de destaque principal */
+    --green-600: #1f8e4f;
+    /* Tonalidade mais escura para interação */
+    --graphite: #2C3E50;
+    /* Cor escura principal (títulos) */
+    --bg: #fff;
+    /* Fundo principal (branco) */
+    --bg-alt: #f6f9fb;
+    /* Fundo alternativo (cinza claro) */
+    --text: #0f172a;
+    /* Cor principal do texto */
+    --muted: #6b7b8c;
+    /* Cor para textos secundários */
+    --border: #e5e7eb;
+    /* Cor da borda */
+    --card: #fff;
+    /* Fundo de cartões */
+
+    /* Variáveis de Medida e Efeito */
+
+    --radius: 14px;
+    /* Raio de borda padrão */
+    --shadow: 0 10px 30px rgba(28, 28, 28, .06);
+    /* Sombra suave para cartões */
+}
+
+:root.dark {
+    /* Sobrescrita de variáveis para o MODO ESCURO */
+    --bg: #0b1220;
+    --bg-alt: #0f172a;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --border: #1f2937;
+    --card: #0f172a;
+    --shadow: none;
+}
+
+/* Resets e Tipografia */
+* {
+    box-sizing: border-box
+}
+
+/* Regra essencial para calcular padding e border DENTRO da largura */
+html,
+body {
+    margin: 0;
+    padding: 0
+}
+
+/* Remove margens e paddings padrão do navegador */
+
+body {
+    /* Estilos gerais do corpo, incluindo transição de tema */
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    /* Aplica o fundo do tema */
+    color: var(--text);
+    /* Aplica a cor do texto do tema */
+    line-height: 1.6;
+    font-size: 16px;
+    transition: background .3s ease, color .3s ease;
+}
+
+a {
+    color: var(--green);
+    /* Links usam a cor primária */
+    text-decoration: none;
+    /* Remove sublinhado por padrão */
+}
+
+a:hover {
+    text-decoration: underline;
+    /* Adiciona sublinhado no hover */
+}
+
+/* Contêiner e Classes de Utilidade */
+.container {
+    max-width: 1200px;
+    /* Largura máxima do conteúdo no App */
+    margin: 0 auto;
+    padding: 0 20px;
+    /* Padding lateral para evitar que o conteúdo cole nas bordas em mobile */
+}
+
+.muted {
+    color: var(--muted);
+    /* Classe de utilidade para textos secundários */
+}

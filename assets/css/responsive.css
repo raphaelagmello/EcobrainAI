@@ -1,30 +1,42 @@
 /* Responsive */
 /* Início da Media Query: As regras dentro deste bloco só se aplicam 
    em telas com largura máxima (max-width) de 920px (telas de tablet ou menores). */
-@media (max-width: 920px){
-  .grid.two,.grid.three,.grid.four{
-    grid-template-columns:1fr; /* Qualquer layout de 2, 3 ou 4 colunas é forçado a ter 1 coluna de 100% de largura. */
+@media (max-width: 920px) {
+
+  .grid.two,
+  .grid.three,
+  .grid.four {
+    grid-template-columns: 1fr;
+    /* Qualquer layout de 2, 3 ou 4 colunas é forçado a ter 1 coluna de 100% de largura. */
   }
 
-  .menu-toggle{
-    display:block; /* O botão "☰" (Menu Toggle) que estava escondido é mostrado (display: none -> display: block). */
+  .menu-toggle {
+    display: block;
+    /* O botão "☰" (Menu Toggle) que estava escondido é mostrado (display: none -> display: block). */
   }
 
-  .nav{
-    display:none; /* O menu de navegação é escondido por padrão em telas pequenas. */
-    flex-direction:column; /* Muda o menu de links de horizontal para vertical. */
-    align-items:flex-start; /* Alinha os links do menu à esquerda. */
-    background:var(--bg); /* Usa a cor de fundo do tema (claro ou escuro) para o menu. */
-    position:absolute; /* Posiciona o menu de forma absoluta (flutuante) */
-    right:20px;
-    top:64px; /* Posiciona abaixo do cabeçalho (que tem 64px de altura). */
-    padding:12px; 
-    border:1px solid var(--border);
-    border-radius:12px;
+  .nav {
+    display: none;
+    /* O menu de navegação é escondido por padrão em telas pequenas. */
+    flex-direction: column;
+    /* Muda o menu de links de horizontal para vertical. */
+    align-items: flex-start;
+    /* Alinha os links do menu à esquerda. */
+    background: var(--bg);
+    /* Usa a cor de fundo do tema (claro ou escuro) para o menu. */
+    position: absolute;
+    /* Posiciona o menu de forma absoluta (flutuante) */
+    right: 20px;
+    top: 64px;
+    /* Posiciona abaixo do cabeçalho (que tem 64px de altura). */
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
   }
 
-  .nav.show{
-    display:flex /* Quando o JavaScript adiciona a classe.show ao menu, ele é exibido (display: flex). */
+  .nav.show {
+    display: flex
+      /* Quando o JavaScript adiciona a classe.show ao menu, ele é exibido (display: flex). */
   }
 
 }

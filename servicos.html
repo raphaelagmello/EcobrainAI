@@ -1,91 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Eco Brain.AI — Serviços/Produtos</title>
-  <meta name="description" content="Serviços e produtos: cálculo de pegada, plano de ação com tarefas, relatórios confiáveis e suporte." />
+  <meta name="description"
+    content="Serviços e produtos: cálculo de pegada, plano de ação com tarefas, relatórios confiáveis e suporte." />
   <link rel="stylesheet" href="assets/css/base.css" />
   <link rel="stylesheet" href="assets/css/layout.css" />
   <link rel="stylesheet" href="assets/css/components.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="stylesheet" href="assets/css/contato.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/buttons.css" />
+
 </head>
+
 <body>
 
-<header class="site-header" role="banner">
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <div class="container nav-wrap">
-    <a class="brand" href="index.html" aria-label="Página inicial">
-      <img src="assets/img/logo.png" alt="" class="logo" width="28" height="28" />
-      <span class="brand-name">Eco Brain.AI</span>
-    </a>
-    <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="primaryNav">☰</button>
-    <nav id="primaryNav" class="nav" aria-label="Navegação primária">
-      <a href="index.html">Início</a>
-      <a href="sobre.html">Sobre Nós</a>
-      <a href="servicos.html">Serviços/Produtos</a>
-      <a href="contato.html">Contato</a>
-      <a href="app/app.html" class="badge">Entrar no App</a>
-      <button id="themeToggle" class="btn ghost" aria-pressed="false" aria-label="Alternar tema">🌙</button>
-      <div class="font-controls" aria-label="Controles de fonte">
-        <button id="fontDec" class="btn ghost" aria-label="Diminuir fonte">A-</button>
-        <button id="fontInc" class="btn ghost" aria-label="Aumentar fonte">A+</button>
+  <header class="site-header" role="banner">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Página inicial">
+        <img src="assets/img/logo.png" alt="" class="logo" width="28" height="28" />
+        <span class="brand-name">Eco Brain.AI</span>
+      </a>
+      <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="primaryNav">☰</button>
+      <nav id="primaryNav" class="nav" aria-label="Navegação primária">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="servicos.html">Serviços/Produtos</a>
+        <a href="contato.html">Contato</a>
+        <a href="app/app.html" class="badge">Entrar no App</a>
+        <button id="themeToggle" class="btn ghost" aria-pressed="false" aria-label="Alternar tema">🌙</button>
+        <div class="font-controls" aria-label="Controles de fonte">
+          <button id="fontDec" class="btn ghost" aria-label="Diminuir fonte">A-</button>
+          <button id="fontInc" class="btn ghost" aria-label="Aumentar fonte">A+</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Serviços & Produtos</h1>
+        <p class="lead">Do diagnóstico ao resultado: ferramentas para medir, reduzir e comunicar sua jornada de
+          descarbonização.</p>
+        <p><a class="btn primary" href="app/app.html">Entrar no App agora</a></p>
       </div>
-    </nav>
-  </div>
-</header>
+    </section>
 
-<main id="conteudo">
-  <section class="page-hero">
-    <div class="container">
-      <h1>Serviços & Produtos</h1>
-      <p class="lead">Do diagnóstico ao resultado: ferramentas para medir, reduzir e comunicar sua jornada de descarbonização.</p>
-      <p><a class="btn primary" href="app/app.html">Entrar no App agora</a></p>
-    </div>
-  </section>
+    <section class="container" aria-labelledby="sec-serv">
+      <h2 id="sec-serv">Portfólio</h2>
+      <div class="grid three cards-grid">
+        <article class="card">
+          <h3>Cálculo de Pegada</h3>
+          <p>Cadastro de máquinas, matriz energética e produção. Estimativa de emissões por escopo e processo.</p>
+          <a class="btn" href="app/app.html">Usar agora</a>
+        </article>
+        <article class="card">
+          <h3>Plano de Tarefas</h3>
+          <p>Geração de tarefas graduais com impacto estimado (tCO₂e), responsáveis e prazos.</p>
+          <a class="btn" href="app/app.html#tab-tarefas">Ver tarefas</a>
+        </article>
+        <article class="card">
+          <h3>Relatórios</h3>
+          <p>Indicadores e histórico com exportação em PDF/CSV para avaliações e auditorias.</p>
+          <a class="btn" href="app/app.html#tab-relatorio">Abrir relatório</a>
+        </article>
+      </div>
+    </section>
+  </main>
 
-  <section class="container" aria-labelledby="sec-serv">
-    <h2 id="sec-serv">Portfólio</h2>
-    <div class="grid three cards-grid">
-      <article class="card">
-        <h3>Cálculo de Pegada</h3>
-        <p>Cadastro de máquinas, matriz energética e produção. Estimativa de emissões por escopo e processo.</p>
-        <a class="btn" href="app/app.html">Usar agora</a>
-      </article>
-      <article class="card">
-        <h3>Plano de Tarefas</h3>
-        <p>Geração de tarefas graduais com impacto estimado (tCO₂e), responsáveis e prazos.</p>
-        <a class="btn" href="app/app.html#tab-tarefas">Ver tarefas</a>
-      </article>
-      <article class="card">
-        <h3>Relatórios</h3>
-        <p>Indicadores e histórico com exportação em PDF/CSV para avaliações e auditorias.</p>
-        <a class="btn" href="app/app.html#tab-relatorio">Abrir relatório</a>
-      </article>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <strong>Eco Brain.AI</strong>
+        <p class="muted">Startup Explorer — Projeto acadêmico</p>
+        <small class="muted">© <span id="year"></span> Eco Brain.AI. Todos os direitos reservados.</small>
+      </div>
+      <div>
+        <p><strong>LGPD & Ética</strong><br>
+          Este site é demonstrativo e não armazena dados sensíveis. No ambiente de produção, inserir Política de
+          Privacidade, Termos de Uso e Aviso de Cookies.</p>
+      </div>
+      <div>
+        <p><strong>Acessibilidade</strong><br>
+          Ajuste o tamanho da fonte (A-/A+), ative o modo escuro e navegue por teclado (Tab/Shift+Tab).</p>
+      </div>
     </div>
-  </section>
-</main>
-
-<footer class="site-footer" role="contentinfo">
-  <div class="container footer-grid">
-    <div>
-      <strong>Eco Brain.AI</strong>
-      <p class="muted">Startup Explorer — Projeto acadêmico</p>
-      <small class="muted">© <span id="year"></span> Eco Brain.AI. Todos os direitos reservados.</small>
-    </div>
-    <div>
-      <p><strong>LGPD & Ética</strong><br>
-      Este site é demonstrativo e não armazena dados sensíveis. No ambiente de produção, inserir Política de Privacidade, Termos de Uso e Aviso de Cookies.</p>
-    </div>
-    <div>
-      <p><strong>Acessibilidade</strong><br>
-      Ajuste o tamanho da fonte (A-/A+), ative o modo escuro e navegue por teclado (Tab/Shift+Tab).</p>
-    </div>
-  </div>
-</footer>
- <script src="assets/js/tema.js" defer></script>
+  </footer>
+  <script src="assets/js/tema.js" defer></script>
   <script src="assets/js/validar.js" defer></script>
 
 </body>
+
 </html>

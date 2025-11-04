@@ -12,8 +12,12 @@
   <link rel="stylesheet" href="assets/css/layout.css" />
   <link rel="stylesheet" href="assets/css/components.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="assets/css/header.css"/>
+  <link rel="stylesheet" href="assets/css/buttons.css"/>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="assets/js/mapa.js"></script>
+    <integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
 </head>
 
@@ -104,28 +108,6 @@
   </footer>
   <script src="assets/js/tema.js" defer></script>
   <script src="assets/js/validar.js" defer></script>
-  <!--Link abaixo é do mapa-->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
- 
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-   
-    const fatecMogiMirim = [-22.4223031891046, -46.949371420697496];
-
-    const map = L.map('map', { scrollWheelZoom: false }).setView(fatecMogiMirim, 17);
-
-    
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; OpenStreetMap'
-    }).addTo(map);
-
- 
-    L.marker(fatecMogiMirim).addTo(map)
-      .bindPopup('<b>Fatec "Arthur de Azevedo" de Mogi Mirim</b>')
-      .openPopup();
-  });
- </script>
+  
 </body>
 </html>

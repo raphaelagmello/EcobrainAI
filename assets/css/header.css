@@ -1,0 +1,91 @@
+/* Header ( garante que o cabeçalho permaneça visível no topo da tela e defina a estrutura da sua navegação. */
+.site-header {
+    position: sticky;
+    /* Faz o cabeçalho 'grudar' no topo ao rolar a página */
+    top: 0;
+    /* Define a distância do topo (0px) */
+    z-index: 50;
+    /* Garante que o header fique sobre outros elementos ao rolar */
+    background: var(--bg);
+    /* Usa a cor de fundo definida em 'base.css' (branco ou escuro) */
+    border-bottom: 1px solid var(--border)
+        /* Adiciona uma linha de separação na parte inferior */
+}
+
+.nav-wrap {
+    display: flex;
+    /* Usa Flexbox para alinhar itens */
+    align-items: center;
+    /* Alinha verticalmente ao centro */
+    justify-content: space-between;
+    /* Espaça o logo de um lado e o menu do outro */
+    height: 64px;
+    /* Altura fixa do cabeçalho */
+}
+
+.brand {
+    display: flex;
+    /* Usa Flexbox para alinhar logo e nome da marca */
+    gap: 12px;
+    /* Define 16px de espaço ENTRE os links  */
+    align-items: center;
+    /* Alinha os items ao centro */
+}
+
+.brand-name {
+    font-weight: 800;
+    /* Deixa o nome da marca bem negrito */
+    color: rgb(39, 174, 96)
+        /* Usa a cor principal para o texto */
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    /* Arredonda a logo */
+}
+
+
+.nav {
+    display: flex;
+    /* Alinhamento do menu de links */
+    gap: 16px;
+    align-items: center;
+}
+
+.nav a {
+    padding: 8px 10px;
+    /* Define o espaço INTERNO entre os itens  */
+    border-radius: 10px
+}
+
+.nav a:hover {
+    background: var(--bg-alt);
+    /* Cor de fundo suave ao passar o mouse */
+    text-decoration: none;
+    /* Remove o sublinhado, já que tem o fundo de destaque */
+}
+
+.nav a.badge {
+    border: 1px solid var(--border);
+    /* Estilo de botão de destaque (Ex: "Entrar no App") */
+    border-radius: 999px;
+    /* Transforma o botão em formato de pílula (muito arredondado) */
+    padding: 8px 12px;
+    font-weight: 700;
+}
+
+.menu-toggle {
+    display: none;
+    /* Esconde o botão de menu em telas grandes (será mostrado no 'responsive.css') */
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 6px 10px
+}
+
+.font-controls .btn {
+    padding: 6px 8px;
+    /* Ajusta o padding dos botões de A+ / A- */
+}
